@@ -14,7 +14,7 @@ const Cast = () => {
   return (
     <div>
       {movieCast && movieCast.length ? (
-        <Box as="ul" display="flex" flexDirection="column" gridGap={15} mt={15}>
+        <Box as="ul" display="flex" flexWrap="wrap" gridGap={15} mt={15}>
           {movieCast.map(({ id, character, name, profile_path }) => {
             const actorPhoto = profile_path
               ? `https://image.tmdb.org/t/p/w500${profile_path}`
@@ -22,7 +22,7 @@ const Cast = () => {
 
             return (
               <li key={id}>
-                <Box display="flex" gridGap={10}>
+                <Box display="flex" gridGap={10} width={300}>
                   <img src={actorPhoto} alt={`${name}`} width={150} />
                   <div>
                     <p>{name}</p>

@@ -14,7 +14,15 @@ const Home = () => {
   return (
     <div>
       <h1>Trending today</h1>
-      <Box as="ul" display="flex" flexDirection="column" gridGap={15} mt={15}>
+      <Box
+        as="ul"
+        display="flex"
+        flexWrap="wrap"
+        gridGap={15}
+        mt={15}
+        ml={'auto'}
+        mr={'auto'}
+      >
         {trendingList &&
           trendingList.map(({ id, title, poster_path, release_date }) => {
             const imgUrl = poster_path
@@ -28,7 +36,7 @@ const Home = () => {
             return (
               <li key={id}>
                 <Link to={`/movies/${id}`} state={{ from: location }}>
-                  <Box display="flex" gridGap={10}>
+                  <Box display="flex" gridGap={10} width={450}>
                     <img
                       src={imgUrl}
                       alt={`Movie poster of ${title}`}
